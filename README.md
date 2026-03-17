@@ -90,20 +90,7 @@ Drinks&Go/
 
 ---
 
-## 🐛 Known Bugs Fixed
 
-During development the following bugs were identified and fixed:
-
-- Category dropdown was pointing to wrong controller (`Drink` → `Drinks`)
-- Login POST had `[Authorize]` instead of `[AllowAnonymous]`, blocking form submission
-- Register page was missing `[AllowAnonymous]` on both GET and POST
-- `_ViewImports.cshtml` had a broken tag helper reference to a non-existent project
-- `ReturnUrl` and `OrderLines` were not nullable, causing silent form validation failures
-- Order completion used `return View()` instead of `RedirectToAction`, breaking the confirmation page
-- Database table names were lowercase (`order`, `orderDetails`) causing SQL errors
-- Missing `City` field in Order model caused NULL constraint violation on save
-
----
 
 
 ## 🔐 Default Password Requirements
