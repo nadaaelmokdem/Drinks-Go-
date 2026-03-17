@@ -1,0 +1,42 @@
+﻿@model LoginViewModel
+
+<div class="row justify-content-center loginForm">
+    <div class="col-md-8">
+        <h2>Register now at Drink&Go</h2>
+        <form asp-controller="Account" asp-action="Register" method="post" class="needs-validation" novalidate>
+            <h4>Create a new account and order your first drink today!</h4>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@error.ErrorMessage</p>
+                    }
+                </div>
+            }
+            <hr />
+
+            <div class="mb-3 row">
+                <label asp-for="UserName" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="Password" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 offset-sm-2 text-end">
+                    <button type="submit" class="btn btn-success">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

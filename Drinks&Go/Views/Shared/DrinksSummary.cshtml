@@ -1,0 +1,25 @@
+﻿@model Drinks_Go.Models.Drink
+
+<div class="card shadow-sm rounded-3" style="width: 18rem;">
+    <img src="~/Images/@Model.ImageUrl" class="card-img-top" alt="@Model.Name"
+         style="height: 180px; object-fit: cover;" />
+
+    <div class="card-body text-center">
+        <h5 class="card-title">
+            <a asp-controller="Drink" asp-action="Details" asp-route-id="@Model.DrinkId"
+               class="text-decoration-none text-dark">
+                @Model.Name
+            </a>
+        </h5>
+
+        <p class="card-text text-muted">@Model.ShortDescription</p>
+        <p class="fw-bold text-success">@Model.Price.ToString("C")</p>
+
+        <a class="btn btn-success w-100"
+           asp-controller="ShoppingCart"
+           asp-action="AddToShoppingCart"
+           asp-route-drinkId="@Model.DrinkId">
+            <i class="bi bi-cart-plus"></i> Add to cart
+        </a>
+    </div>
+</div>

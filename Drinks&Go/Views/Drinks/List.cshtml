@@ -1,0 +1,11 @@
+﻿@model Drinks_Go.ViewModels.DrinksListViewModel
+
+<h2>@Model.CurrentCategory</h2>
+
+<div style="display:flex; flex-wrap:wrap; gap:20px;">
+    @foreach (var drink in Model.Drinks)
+    {
+        <partial name="DrinksSummary" model="drink" />
+    }
+</div>
+<p>Total Drinks: @Model.Drinks.Count()</p>

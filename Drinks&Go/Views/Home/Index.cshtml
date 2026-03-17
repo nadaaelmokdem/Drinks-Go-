@@ -1,0 +1,10 @@
+﻿@model HomeViewModel
+@await Html.PartialAsync("Carousel")
+<p>Your one-stop shop for all your beverage needs. Whether you're looking for refreshing non-alcoholic drinks or something with a bit more kick, we've got you covered.</p>
+<p>Browse our wide selection of drinks, add your favorites to the shopping cart, and enjoy fast and reliable delivery right to your doorstep. Cheers!</p>
+<div class ="row">
+	@foreach(var drink in Model.PreferredDrinks)
+	{
+		@Html.Partial("DrinksSummary", drink)
+	}
+</div>
